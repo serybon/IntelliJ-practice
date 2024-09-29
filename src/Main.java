@@ -16,13 +16,13 @@ public class Main {
         String userString = scanner.nextLine();
         //My rifle is my best friend.
         userString = "My rifle is my best friend";
-        System.out.printf("userString: = %s\n___________________________\n", userString);
+        System.out.printf("userString: = %s", userString);
 
         int stringLength = userString.length();
         System.out.print("\n___________________________\n");
 
 
-        System.out.printf("String length: = %d\n___________________________\n", stringLength);
+        System.out.printf("stringLength: = %d\n___________________________\n", stringLength);
 
 
         boolean stringIsEmpty = userString.isEmpty();
@@ -72,6 +72,7 @@ public class Main {
         mutableString.append("student!");
         mutableString.append(" Are you ready to learn Java?");
         System.out.printf("mutableString: %s\n___________________________\n", mutableString);
+        System.out.println("Ok");
 
 
     }
