@@ -3,5 +3,6 @@ public class Main {
         System.out.println("Hello world!");
         // Control + D - копирование строки снизу;
         // Control + Alt + l - автоматическое форматирование кода;
+        // Control + W - выделение слова;
     }
 }
