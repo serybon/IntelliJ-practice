@@ -15,7 +15,13 @@ public class Mouse extends  Component implements InfoPriceProvider {
     }
     public void showInfo(){
         System.out.printf("\n=================%s====================", this.getClass().getName().toUpperCase());
-        System.out.printf("\nInformation about Components.Mouse: \nVendor: %s\nModel: %s\nQuantity of buttons: %d" +
-                "\nType of the mouse: %s\nPrice: %.2f$", vendor,model,quantityOfButtons,typeOfMouse, price);
+        System.out.printf("""
+                Information about Mouse:
+                Vendor: %s
+                Model: %s
+                Quantity of buttons: %d
+                Type of the mouse: %s
+                Price: %.2f$
+                """, vendor,model,quantityOfButtons,typeOfMouse, price);
     }
 }

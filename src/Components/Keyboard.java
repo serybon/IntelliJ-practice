@@ -15,7 +15,12 @@ public class Keyboard extends Component implements InfoPriceProvider {
 
     public void showInfo() {
         System.out.printf("\n=================%s====================", this.getClass().getName().toUpperCase());
-        System.out.printf("\nInformation about Components.Keyboard: \nVendor:  %s\nModel %s\nSwitch technology: %s" +
-                "\nType of the keyboard: %s\nPrice: %.2f$", vendor, model, switchTechnology, typeOfKeyboard, price);
+        System.out.printf("""
+                Information about Keyboard:
+                Vendor: %s
+                Model: %s
+                Switch technology: %s
+                Type of the keyboard: %s
+                Price: %.2f$""", vendor, model, switchTechnology, typeOfKeyboard, price);
     }
 }

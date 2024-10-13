@@ -17,8 +17,14 @@ public class Monitor extends Component implements InfoPriceProvider{
 
     public void showInfo() {
         System.out.printf("\n=================%s====================", this.getClass().getName().toUpperCase());
-        System.out.printf("\nInformation about Components.Monitor: \nVendor: %s\nModel: %s\nComponents.Monitor size: %d\nRefresh Rate: %d" +
-                "\nResolution Standard: %s\nPrice: %.2f$", vendor, model, monitorSize, refreshRate, resolutionStandard, price);
+        System.out.printf("""
+                Information about Monitor:
+                Vendor: %s
+                Model: %s
+                Components.Monitor size: %d
+                Refresh Rate: %d
+                Resolution Standard: %s
+                Price: %.2f$""", vendor, model, monitorSize, refreshRate, resolutionStandard, price);
     }
 }
 
