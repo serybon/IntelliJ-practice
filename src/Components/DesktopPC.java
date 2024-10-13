@@ -1,3 +1,5 @@
+package Components;
+
 public class DesktopPC {
     Tower currentTower;
     Monitor currentMonitor;
@@ -13,16 +15,30 @@ public class DesktopPC {
         currentMouse = mouse;
         currentKeyboard = keyboard;
         computerAssembly = computerAssemblyPrice;
-        pcPrice = tower.towerPrice + monitor.monitorPrice+ mouse.mousePrice+ keyboard.keyboardPrice+computerAssemblyPrice;
+        pcPrice = tower.price + monitor.price+ mouse.price+ keyboard.price+computerAssemblyPrice;
     }
     public void showInfoAboutPC(){
         System.out.println("This computer assembly consists of the following components: ");
-        currentTower.showInfoAboutTower();
-        currentMonitor.showInfoAboutMonitor();
-        currentMouse.showInfoAboutMouse();
-        currentKeyboard.showInfoAboutKeyboard();
+        currentTower.showInfo();
+        currentMonitor.showInfo();
+        currentMouse.showInfo();
+        currentKeyboard.showInfo();
         System.out.println("\n==========================FINAL PRICE=============================");
         System.out.printf("The total cost of assembling the computer is equal to - %.2f$", pcPrice);
         System.out.println("\n==================================================================");
+    }
+    public static void addUpShowInfo(InfoPriceProvider... components) {
+        System.out.println("\nInformation about all components: ");
+
+        double sumComponents = 0;
+        for (InfoPriceProvider component : components) {
+            component.showInfo();
+            sumComponents += component.getPrice();
+
+        }
+        System.out.println("\n==========================FINAL PRICE=============================");
+        System.out.printf("The total cost of assembling the computer is equal to - %.2f$", sumComponents);
+        System.out.println("\n==================================================================");
+
     }
 }
