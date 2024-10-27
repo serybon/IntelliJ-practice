@@ -14,10 +14,22 @@ public class Tower extends Component implements InfoPriceProvider {
         this.operationSystem = operationSystem;
         this.price = price;
     }
-
+    @Override
     public void showInfo() {
         System.out.printf("\n=================%s====================", this.getClass().getName().toUpperCase());
         System.out.printf("""
+                        Information about Tower:
+                        Vendor: %s
+                        Model: %s
+                        Ram memory size: %d
+                        Graphics Card: %s
+                        Operation System: %s
+                        Price: %.2f$""", vendor,model, ramMemorySize, graphicsCard, operationSystem, price);
+    }
+    @Override
+    public String getInfo() {
+        String title = String.format("\n=================%s====================read=from=file", this.getClass().getName().toUpperCase());
+        return title + String.format("""
                         Information about Tower:
                         Vendor: %s
                         Model: %s

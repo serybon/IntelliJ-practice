@@ -5,7 +5,7 @@ public class Keyboard extends Component implements InfoPriceProvider {
     String switchTechnology;//membrane/mechanical/optical
     String typeOfKeyboard;//wired/wireless
 
-    public Keyboard(String vendor,String model, String switchTechnology, String typeOfMouse, double price) {
+    public Keyboard(String vendor, String model, String switchTechnology, String typeOfMouse, double price) {
         this.vendor = vendor;
         this.model = model;
         this.switchTechnology = switchTechnology;
@@ -13,9 +13,22 @@ public class Keyboard extends Component implements InfoPriceProvider {
         this.price = price;
     }
 
+    @Override
     public void showInfo() {
         System.out.printf("\n=================%s====================", this.getClass().getName().toUpperCase());
         System.out.printf("""
+                Information about Keyboard:
+                Vendor: %s
+                Model: %s
+                Switch technology: %s
+                Type of the keyboard: %s
+                Price: %.2f$""", vendor, model, switchTechnology, typeOfKeyboard, price);
+    }
+
+    @Override
+    public String getInfo() {
+        String title = String.format("\n=================%s====================read=from=file", this.getClass().getName().toUpperCase());
+        return title + String.format("""
                 Information about Keyboard:
                 Vendor: %s
                 Model: %s

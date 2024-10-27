@@ -1,6 +1,6 @@
 package Components;
 
-public class Component {
+public class Component{
     protected String vendor;
     protected String model;
     protected double price;
