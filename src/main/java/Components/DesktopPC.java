@@ -27,7 +27,7 @@ public class DesktopPC {
         System.out.printf("The total cost of assembling the computer is equal to - %.2f$", pcPrice);
         System.out.println("\n==================================================================");
     }
-    public static void addUpShowInfo(InfoPriceProvider... components) {
+    public static void addUpShowInfoAboutDefiniteComponents(InfoPriceProvider... components) {
         System.out.println("\nInformation about all components: ");
 
         double sumComponents = 0;
@@ -40,5 +40,13 @@ public class DesktopPC {
         System.out.printf("The total cost of assembling the computer is equal to - %.2f$", sumComponents);
         System.out.println("\n==================================================================");
 
+    }
+    public static DesktopPC CreatePcWithKnownSpecifications(){
+        Tower tower = new Tower("Dell", "OptiPlex 7010", 32, "Intel UHD Graphics 770", "Windows 11", 239.99);
+        Monitor monitor = new Monitor("SAMSUNG", "Odyssey G4 LS27BG400EIXCI",27, 144, "FullHD", 119.99);
+        Mouse mouse = new Mouse("Logitech", "G102",6, "wired", 28.95);
+        Keyboard keyboard = new Keyboard("Corsair", "ML234","Membrane", "Wired", 39.99);
+        
+        return new DesktopPC(tower, monitor, mouse, keyboard, 60);
     }
 }
