@@ -21,19 +21,47 @@ public class FileOperation {
         }
     }
 
-    public static void ReadFromFile(){
+    public static void ReadFromFile() {
         ArrayList<String> fileContent = new ArrayList<>();
         try {
             File file = new File("F:\\IntelliJ_source\\save.txt");
             Scanner scanner = new Scanner(file);
-            while (scanner.hasNext()){
+            while (scanner.hasNext()) {
                 fileContent.add(scanner.nextLine());
             }
             fileContent.forEach(System.out::println);
-        }catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("File not found. Full message: " + e.getMessage());
         }
 
 
     }
+
+    public static void StartMenu() {
+        int userChoice;
+        do {
+            System.out.println("Press 1 to create new DesktopPc\n" +
+                    "Press 2 to load previous record\n" +
+                    "Press 0 to exit\n---------------\n" +
+                    "Make your choice: ");
+            Scanner scanner = new Scanner(System.in);
+            userChoice = scanner.nextInt();
+            switch (userChoice) {
+                case 1:
+                    DesktopPC.CreateNewDesktopPC();
+                    break;
+                case 2:
+                    FileOperation.ReadFromFile();
+                    break;
+                case 0:
+                    System.out.println("End");
+                    break;
+                default:
+                    System.out.println("You input incorrect data");
+            }
+        } while (userChoice != 0);
+
+
+    }
+
 }

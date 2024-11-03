@@ -1,6 +1,8 @@
 package Components;
 
-public class Monitor extends Component implements InfoPriceProvider{
+import java.util.Scanner;
+
+public class Monitor extends Component implements InfoPriceProvider {
 
     int monitorSize;
     int refreshRate;//60/100/144/240
@@ -13,10 +15,30 @@ public class Monitor extends Component implements InfoPriceProvider{
         this.refreshRate = refreshRate;
         this.resolutionStandard = resolutionStandard;
         this.price = price;
+        System.out.println("Monitor has been successfully created.");
     }
+
+    public static Monitor CreateNewMonitor() {
+        System.out.println("Inputting Monitor characteristics.");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Monitor vendor: ");
+        String vendor = scanner.next();
+        System.out.println("Monitor model: ");
+        String model = scanner.next();
+        System.out.println("Monitor size: ");
+        int monitorSize = scanner.nextInt();
+        System.out.println("Refresh rate [60/100/144/240]: ");
+        int refreshRate = scanner.nextInt();
+        System.out.println("Resolution standard [HD/Full HD/QHD/4K UHD/5K]: ");
+        String resolutionStandard = scanner.next();
+        System.out.println("Monitor price: ");
+        double price = scanner.nextDouble();
+        return new Monitor(vendor, model,monitorSize,refreshRate,resolutionStandard, price);
+    }
+
     @Override
     public void showInfo() {
-        System.out.printf("\n=================%s====================read=from=file", this.getClass().getName().toUpperCase());
+        System.out.printf("\n=================%s====================\n", this.getClass().getName().toUpperCase());
         System.out.printf("""
                 Information about Monitor:
                 Vendor: %s
@@ -26,9 +48,10 @@ public class Monitor extends Component implements InfoPriceProvider{
                 Resolution Standard: %s
                 Price: %.2f$""", vendor, model, monitorSize, refreshRate, resolutionStandard, price);
     }
+
     @Override
     public String getInfo() {
-        String title = String.format("\n=================%s====================", this.getClass().getName().toUpperCase());
+        String title = String.format("\n=================%s====================read=from=file\n", this.getClass().getName().toUpperCase());
         return title + String.format("""
                 Information about Monitor:
                 Vendor: %s
